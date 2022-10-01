@@ -1,0 +1,309 @@
+.modal-container {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    width: 20%;
+    height: 20%;
+    margin: 15% auto;
+    padding: 20px;
+    border: 0.5px solid #888;
+    border-radius: 5px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-remove {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+
+.modal-remove-content {
+    width: 25%;
+    margin: 15% auto;
+    padding: 20px;
+    border: 0.5px solid #888;
+    border-radius: 5px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-remove-buttons {
+    margin-top: 10px;
+    display: flex;
+}
+
+.modal-remove-buttons-confirm {
+    font-size: 14px;
+    margin-right: 25px;
+    border: none;
+    background-color: #f44336;
+    color: rgba(255, 255, 255, 0.884);
+    border-radius: 4px;
+    padding: 8px 25px 8px 25px;
+}
+
+.modal-remove-buttons-cancel {
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ccc;
+    padding: 8px 25px 8px 25px;
+}
+
+.modal-remove-buttons-cancel:hover, .modal-remove-buttons-confirm:hover {
+    cursor: pointer;
+}
+
+.modal-content > span {
+    align-self: flex-end;
+    margin-right: 30px;
+}
+
+.modal-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-form > button {
+    background: #4723D9;
+    color: #fff;
+    width: 60px;
+    border-radius: 5px;
+    border-color: #4723D9;
+    border-width: 1px;
+    padding: 5px;
+    font-size: 14px;
+    font-family: 'Nunito';
+}
+
+.modal-inputs-pin {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.modal-inputs-pin > input {
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid rgba(51, 51, 51, 0.553);
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.close {
+    margin-bottom: 10px;
+    color: rgba(68, 37, 37, 0.74);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+.album-button > form {
+    display: flex;
+}
+
+.container {
+    padding-top: 20px;
+}
+
+.albums {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-remove {
+    margin-top: -15px;
+    margin-bottom: 25px;
+    font-size: 11px;
+    color: #000; 
+    color: rgba(223, 15, 15, 0.5);
+}
+
+.card-remove:hover {
+    cursor: pointer;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.card-without-pin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.card-without-pin:hover,
+.card:hover {
+    cursor: pointer;
+}
+
+.card-header {
+    display: flex; 
+    justify-content: center;
+}
+
+.card-header > i {
+    color: #4723D9;
+}
+
+.card-without-pin >
+.card-header > i {
+    color: rgb(247, 202, 163);
+}
+
+.card-body {
+    display: flex;
+    align-items: baseline;
+}
+
+.card-body > h4 {
+    color: #4723D9;
+}
+
+.card-without-pin >
+.card-body > h4 {
+    color: rgb(247, 202, 163);
+}
+
+.card-body-text {
+    margin-left: 10px;
+    font-size: 11px;
+    color: #000;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.album-create {
+    margin-bottom: 20px;
+}
+
+.album-create-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.album-create-input {
+    font-family: var(--body-font);
+    padding: 0.2rem 0.8rem 0.2rem 0.8rem;
+    font-size: 16px;
+    border: 1px solid;
+    border-color: #4723D9;
+    border-radius: 0.7rem;
+    margin-bottom: 5px;
+}
+
+.album-create-button {
+    width: 5rem;
+    text-align: center;
+    margin-top: 15px;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    font-size: 16px;
+}
+
+.album-create-name {
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+
+.album-create-pin {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.album-create-pin-n {
+    width: 30px;
+    margin: 0 0.2rem;
+    padding: 0.2rem;
+    border: 1px solid #4723D9;
+    border-radius: 50%;
+    height: 30px;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.album-create-pin-n:first-child {
+    margin-left: 0px;
+}
+
+.album-create-button {
+    background-color: #4723D9;
+    color: white;
+    padding: 0.25rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.album-create-button-disabled {
+    background-color: #666375;
+    color: white;
+    padding: 0.25rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.album-create-button-disabled:hover {
+    cursor: default !important;
+}
+
+.album-create-button:hover {
+    cursor: pointer;
+}
+

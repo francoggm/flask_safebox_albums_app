@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% set active = "home" %}
+
+{% block head %}
+<link rel="stylesheet" href="../static/home.css">
+{% endblock %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="left-side">
+        <h2>Hi <strong style="color:#4723D9;">{{current_user.name.split()[0]}}</strong>, nice to see you!</h2>
+        <h3>📖 Maybe you cant create a <a href="/albums" style="color:#4723D9;">new album</a></h3>
+        <div class="cards">
+            <div class="albums-card">
+                <img src="../static/images/albums_placeholder.jpg" alt="">
+                <div class="albums-card-content">
+                    <p class="card-title">Albums</p>
+                    <p class="card-text">You have <strong>{{len(current_user.albums)}} album{% if len(current_user.albums) != 1%}s{% endif %}</strong></p>
+                </div>
+            </div>
+            <div class="profile-card">
+                <img src="../static/images/photos_placeholder.jpg" alt="">
+                <div class="albums-card-content">
+                    <p class="card-title">Photos</p>
+                    <p class="card-text">You have <strong>{{photos}} photo{% if photos != 1%}s{% endif %}</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="background-desing">
+        <img src="../static/images/circle-scatter-haikei.svg" alt="" class="first-layer">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_jllppvk7.json"  background="transparent"  speed="1"  class="animation-layer"  loop autoplay></lottie-player>
+    </div>
+</div>
+{% endblock %}
+
+<!-- https://br.freepik.com/vetores/ilustracao-3d images -->
+<!-- https://lottiefiles.com/featured lotties -->

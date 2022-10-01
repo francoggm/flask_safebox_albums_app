@@ -1,0 +1,135 @@
+.container {
+    box-sizing: border-box;
+    height: 93vh;
+}
+
+.account-session {
+    display: flex;
+    height: 100%;
+}
+
+.account-session-img{
+    border-right: 1.5px solid rgba(44, 43, 43, 0.849);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 150px 0px 150px;
+}
+
+.account-session-img-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.account-session-img-btn {
+    font-family: var(--body-font);
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    padding: 0.2rem 1.2rem 0.2rem 1.2rem;
+    font-size: 17px;
+    background-color: #4723D9;
+    color: white;
+    border-color: #4723D9;
+    border-radius: 0.3rem;
+}
+
+.account-session-img-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-session-img-input {
+    font-family: var(--body-font);
+    padding: 0.3rem;
+    font-size: 13px;
+    background-color: white;
+    color: #4723D9;
+    border: 0.1rem solid #4723D9;
+    border-radius: 0.3rem;
+    margin-bottom: 0.5rem;
+    display: none;
+}
+
+label.account-session-img-input {
+    font-size: 16px;
+}
+
+.account-session-img-input:last-child {
+    margin-bottom: 0;
+}
+
+.account-session-img-btn:hover {
+    cursor: pointer;
+}
+
+.account-session-infos {
+    margin-top: 2rem;
+    margin-left: 5rem;
+}
+
+.account-session-infos > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-session-infos-input, .account-session-infos-input-name {
+    margin-bottom: 1.5rem;
+    width: 30rem;
+    height: 2.4rem;
+    border: 0.1rem solid gray;
+    border-radius: 0.2rem;
+    font-size: 16px;
+    padding: 5px 0px 5px 10px;
+    font-family: var(--body-font);
+}
+
+.account-session-infos-input-filled {
+    background-color: rgba(221, 212, 212, 0.486);
+}
+
+.account-session-infos-input:active, .account-session-infos-input-name:focus {
+    border: 0.1rem solid gray;
+}
+
+.account-session-infos-input-name {
+    width: 14.4rem !important;
+}
+
+.account-session-infos-input:last-child {
+    margin-bottom: none;
+}
+
+.account-session-infos-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.account-session-input-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-session-input-label > label {
+    margin-bottom: 0.5rem;
+}
+
+
+.account-session-infos-submit {
+    font-family: var(--body-font);
+    margin-top: 2rem;
+    padding: 0.2rem 1.2rem 0.2rem 1.2rem;
+    font-size: 17px;
+    background-color: #4723D9;
+    color: white;
+    border-color: #4723D9;
+    border-radius: 0.3rem;
+}
+
+.account-session-infos-submit:hover {
+    cursor: pointer;
+}

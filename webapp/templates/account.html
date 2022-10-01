@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% set active = "account" %}
+
+{% block head %}
+<link rel="stylesheet" href="../static/account.css">
+{% endblock %}
+
+{% block title %}Account{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="account-session">
+        <div class="account-session-img">
+            <img {% if current_user.photo %} src="data:;base64,{{bs4enc(current_user.photo).decode("utf-8")}}" {% else %} src="../static/images/no_img_user.png" {% endif %}  alt="" class="account-session-img-image">
+            <h3>{{current_user.name}}</h3>
+            <button class="account-session-img-btn">Update Profile Image</button>
+            <form action="/update_profile_image" method="POST" class="account-session-img-form" enctype="multipart/form-data">
+                <input type="file"  name="picture" id="account-session-img-input" hidden>
+                <label for="account-session-img-input" class="account-session-img-input">Choose file</label>
+                <input type="submit" value="Upload" class="account-session-img-input">
+            </form>
+        </div>
+        <div class="account-session-infos">
+            <h2 style="margin-bottom:2rem;">Profile Infos</h2>
+            <form action="/update_profile" method="POST">
+                <div class="account-session-infos-name">
+                    <div class="account-session-input-label">
+                        <label for="first_name">First Name</label>
+                        <input type="text" id="first_name" name="first_name" class="account-session-infos-input-name account-session-infos-input-filled" value="{% if current_user.name %}{{current_user.name.split(' ')[0]}}{% endif %}">
+                    </div>
+                    <div class="account-session-input-label">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" class="account-session-infos-input-name account-session-infos-input-filled" value="{% if current_user.name %}{{' '.join(current_user.name.split(' ')[1:])}}{% endif %}">
+                    </div>
+                </div>
+                <div class="account-session-input-label">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="account-session-infos-input {% if current_user.email %}account-session-infos-input-filled{% endif %}" value="{% if current_user.email %}{{current_user.email}}{% endif %}">
+                </div>
+                <div class="account-session-input-label">
+                    <label for="phone">Phone</label>
+                    <input type="phone" id="phone" name="phone" class="account-session-infos-input  {% if current_user.phone %}account-session-infos-input-filled{% endif %}" value="{% if current_user.phone %}{{current_user.phone}}{% endif %}">
+                </div>
+                <div class="account-session-input-label">
+                    <label for="address">Address</label>
+                    <input type="phone" id="address" name="address" class="account-session-infos-input  {% if current_user.address %}account-session-infos-input-filled{% endif %}" value="{% if current_user.address %}{{current_user.address}}{% endif %}">
+                </div>
+                <div class="account-session-input-label">
+                    <label for="password_1">Password</label>
+                    <input type="password" id="password_1" name="password_1" class="account-session-infos-input">
+                </div>
+                <div class="account-session-input-label">
+                    <label for="password_2">Retry Password</label>
+                    <input type="password" id="password_2" name="password_2" class="account-session-infos-input">
+                </div>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert" style="display:flex;">
+                                <p class="alert-message"  {% if category == 'success' %} style="margin-right:5px;color:green;"{% else %} style="margin-right:5px;color:red;"{% endif %}>{{message}}</p>
+                                <div class="alert-close">
+                                    <p>&#10060;</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <input type="submit" value="Update Profile" class="account-session-infos-submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var alert_close = document.querySelector('.alert-close')
+    if (alert_close) {
+        var alert_msg = document.querySelector('.alert-message')
+        alert_close.addEventListener('click', () => {
+            alert_msg.style.display = 'none'
+            alert_close.style.display =  'none'
+        })
+    }
+    var img_btn = document.querySelector('.account-session-img-btn')
+    var img_inputs = document.querySelectorAll('.account-session-img-input')
+    img_btn.addEventListener('click', () => {
+        img_inputs.forEach((item, index) => item.style.display = 'block')
+    }) 
+
+</script>
+{% endblock %}

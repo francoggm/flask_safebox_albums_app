@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% set active = "albums" %}
+
+{% block head %}
+<link rel="stylesheet" href="../static/albums.css">
+{% endblock %}
+
+{% block title %}Albums{% endblock %}
+
+{% block body %}
+    
+    <div class="container">
+        <div class="album-create">
+            <form action="/create_album" method="POST">
+                <div class="album-create-form">
+                    <h3>Create a new album!</h3>
+                    <input type="text" name="name" required placeholder="Name" class="album-create-input">
+                    <div class="album-create-pin">
+                        <input type="password" maxlength="1" class="album-create-pin-n" name="pin-1">
+                        <input type="password" maxlength="1" class="album-create-pin-n" name="pin-2">
+                        <input type="password" maxlength="1" class="album-create-pin-n" name="pin-3">
+                        <input type="password" maxlength="1" class="album-create-pin-n" name="pin-4">
+                    </div>
+                    <input type="submit" id="album-create-btn" hidden></input>
+                    <label for="album-create-btn" class="album-create-button">Create</label>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert">
+                                    <p style="color:red;">{{message}}</p>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </form>
+        </div>
+
+
+        <div class="albums">
+            {% for album in albums %}
+            <div class="card-all">
+                <div class="{% if album.pin == ''%}card-without-pin{% else %}card{% endif %}" style="width: 18rem;" data-id="{{album.id}}">
+                    <div class="card-header"><i class='bx bxs-photo-album bx-lg'></i></div>
+                    <div class="card-body">
+                        <h4>{{album.name}}</h5>
+                        <p class="card-body-text">{{len(album.imgs)}} photos</p>
+                    </div>
+                </div>
+                <p class="card-remove" data-id="{{album.id}}" data-name="{{album.name}}">&times; Delete</p>
+            </div>
+            {% endfor %} 
+        </div>
+    </div>
+
+    <div class="modal-container">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div>
+                <div class="modal-inputs-pin">
+                    <input type="password" maxlength="1" class="modal-input">
+                    <input type="password" maxlength="1" class="modal-input">
+                    <input type="password" maxlength="1" class="modal-input">
+                    <input type="password" maxlength="1" class="modal-input">
+                </div>
+                <p class="modal-text" style="text-align: center; color:red; margin-bottom: 10px;"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-remove">
+        <div class="modal-remove-content">
+            <p class="modal-remove-text"></p>
+            <div class="modal-remove-buttons">
+                <button class="modal-remove-buttons-confirm">Confirm</button>
+                <button class="modal-remove-buttons-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="../static/albums.js"></script>
+{% endblock %}
+
+

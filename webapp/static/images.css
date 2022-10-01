@@ -1,0 +1,147 @@
+.modal-remove {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-remove-content {
+    width: 25%;
+    margin: 15% auto;
+    padding: 20px;
+    border: 0.5px solid #888;
+    border-radius: 5px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-remove-buttons {
+    margin-top: 10px;
+    display: flex;
+}
+
+.modal-remove-buttons-confirm {
+    font-size: 14px;
+    margin-right: 25px;
+    border: none;
+    background-color: #f44336;
+    color: rgba(255, 255, 255, 0.884);
+    border-radius: 4px;
+    padding: 8px 25px 8px 25px;
+}
+
+.modal-remove-buttons-confirm:hover {
+    cursor: pointer;
+}
+.modal-remove-buttons-cancel:hover {
+    cursor: pointer;
+}
+
+.modal-remove-buttons-cancel {
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ccc;
+    padding: 8px 25px 8px 25px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.no-img {
+    display: block;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.upload_button {
+    margin-bottom: 15px;
+}
+
+.upload_button > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload_button > form > h3 {
+    color: #4723D9;
+    margin-bottom: 1.5rem;
+}
+
+#label-actual-btn, #label-submit-btn {
+    background-color: white;
+    color: #4723D9;
+    padding: 0.25rem;
+    border-radius: 0.3rem;
+    border: 0.1rem solid #4723D9;
+    cursor: pointer;
+}
+
+#label-submit-btn {
+    margin-left: 10px;
+}
+  
+#file-chosen{
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 0.3rem;
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 15px 30px 15px;
+}
+
+.gallery-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-img {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.gallery-img:last-child {
+    margin-right: 0px;
+}
+
+.gallery-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-text-date{
+    margin-right: 15px;
+    font-size: 11px;
+    color: #000;
+    color: rgba(0, 0, 0, 0.5);
+}
+.gallery-text-delete {
+    margin-top: -5px;
+    font-size: 11px;
+    color: #000; 
+    color: rgba(223, 15, 15, 0.5);
+}
+
+.gallery-text-delete:hover {
+    cursor: pointer;
+}
