@@ -1,8 +1,8 @@
 from flask import Blueprint, request, render_template, redirect, flash, url_for
 from flask_login import current_user, login_required, login_user, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
-import models
-import app
+
+from . models import db, User
 
 users = Blueprint('users', __name__)
 
@@ -12,7 +12,7 @@ def login():
         if request.method == 'POST':
             email = request.form['email']
             password = request.form['password']
-            user = models.User.query.filter_by(email=email).first()
+            user = User.query.filter_by(email=email).first()
             if user:
                 saved_password = user.password
                 if check_password_hash(saved_password, password):
@@ -39,13 +39,13 @@ def register():
             number = request.form['number']
             password1 = request.form['password']
             password2 = request.form['confirmpassword']
-            user = models.User.query.filter_by(email=email).first()
+            user = User.query.filter_by(email=email).first()
             if not user:
                 if len(password1) > 7 and len(password2) > 7:
                     if password1 == password2:
-                        user = models.User(email=email, password=generate_password_hash(password=password1, method='sha256'), name=first_name+' '+last_name, phone=number)
-                        app.db.session.add(user)
-                        app.db.session.commit()
+                        user = User(email=email, password=generate_password_hash(password=password1, method='sha256'), name=first_name+' '+last_name, phone=number)
+                        db.session.add(user)
+                        db.session.commit()
                         return redirect(url_for('users.login'))
                     else:
                         flash("Passwords don't match!")   
