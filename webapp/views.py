@@ -74,19 +74,18 @@ def upload_pic():
 def get_pin():
     if request.method == 'POST':
         id = json.loads(request.data).get('id')
-        albums = current_user.albums
-        for album in albums:
-            if int(id) == album.id:
+        if id:
+            album = Albums.query.get(int(id))
+            if album:
                 return jsonify(album.pin)
         return 400
 
 @views.route('/images/<id>')
 @login_required
 def get_images(id):
-    albums = current_user.albums
-    for album in albums:
-        if int(album.id) == int(id):
-            return render_template('images.html', album=album)
+    album = Albums.query.get(int(id))
+    if album:
+        return render_template('images.html', album=album)
     return redirect(url_for('views.albums'))
 
 @views.route('/delete_img/<id>', methods=['POST'])
