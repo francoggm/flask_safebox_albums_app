@@ -3,7 +3,7 @@
 <h3>The project uses the following technologies</h3>
   > Python (Flask and Flask modules) <br>
   > MySQL <br>
-  > JavaScript Vanilla <br>
+  > JavaScript Vanilla / HTML / CSS <br>
   > Bootstrap 5 <br>
 
 <h3> Project </h3>
@@ -18,4 +18,4 @@ To be able to run the database, you must already have a database in MySQL called
 The dependencies and their versions to run the project are in the requirements.txt file, preferably install exactly as described in this file. After that, just run the main.py file to open the project on a localhost port, if there are any route errors during execution, try the route number in the 'port' parameter of the run method (<strong>main.py, line 4</strong>).
 <br>
 <br>
-<h1> Thank you all! </h1>
+<h2> Thank you all! </h2>
