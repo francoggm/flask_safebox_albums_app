@@ -9,6 +9,7 @@ from . models import db, User, Images, Albums
 views = Blueprint('views', __name__)
 
 @views.route('/')
+@views.route('/home')
 @login_required
 def home():
     photos = 0
@@ -19,8 +20,8 @@ def home():
 @views.route('/albums')
 @login_required
 def albums():
-    albums = current_user.albums
-    return render_template('albums.html', albums=albums)
+    albums = Albums.query.filter_by(user_id=current_user.id)
+    return render_template('albums.html', albums = albums)
 
 @views.route('/create_album', methods=['POST'])
 @login_required
@@ -33,7 +34,7 @@ def create_album():
         pin4 = request.form['pin-4']
         pin = pin1 + pin2 + pin3 + pin4
         user_id = current_user.id
-        if not Albums.query.filter_by(name=name).first():
+        if not Albums.query.filter_by(user_id=current_user.id, name=name).first():
             album = Albums(name=name, pin=pin, user_id=user_id)
             db.session.add(album)
             db.session.commit()
@@ -123,7 +124,7 @@ def update_profile():
                     return redirect(url_for('views.account'))
             else:
                 flash("Passwords don't match, please verify")
-                return redirect(url_for('account'))
+                return redirect(url_for('views.account'))
         db.session.merge(_user)
         db.session.commit()
         flash('Updated!', 'success')

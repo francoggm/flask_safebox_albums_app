@@ -17,13 +17,13 @@ def login():
                 saved_password = user.password
                 if check_password_hash(saved_password, password):
                     login_user(user, remember=True)
-                    return redirect(url_for('home'))
+                    return redirect(url_for('views.home'))
                 else:
                     flash('Wrong password, try again!')
             else:
                 flash("Email don't registred")
         return render_template('login.html')
-    return redirect(url_for('home'))
+    return redirect(url_for('views.home'))
 
 @users.route('/register', methods=['GET', 'POST'])
 def register():
@@ -55,7 +55,7 @@ def register():
                 email = ''
                 flash('Email already registred!')
         return render_template('register.html', name=first_name, last_name=last_name, email=email, number=number)
-    return redirect(url_for('home'))
+    return redirect(url_for('views.home'))
 
 @users.route('/logout')
 @login_required
