@@ -10,7 +10,7 @@
 The auth.py file is in charge of creating, validating and saving new or existing users in the database.
 The views.py file takes care of the remaining routes of the project, routes to create and delete albums, upload and delete images, change user information and access the default templates for the same.
 
-To be able to run the database, you must already have a database in MySQL called users, or if you already have one, modify line 7 of the __init__.py file
+To be able to run the database, you must already have a database in MySQL called users, or if you already have one, modify line 7 of the > __init__.py < file:
 > app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root@localhost/users' <
 and change 'users' to your database name.
 
