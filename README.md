@@ -15,4 +15,7 @@ To be able to run the database, you must already have a database in MySQL called
 <br>
  -> If you get any other MySQL username/password error, try setting the URI correctly for your MySQL server
 <br><br>
-The dependencies and their versions to run the project are in the requirements.txt file, preferably install exactly as described in this file. After that, just run the main.py file to open the project on a localhost port, if there are any route errors during execution, try the route number in the 'port' parameter of the run method (main.py file, line 4).
+The dependencies and their versions to run the project are in the requirements.txt file, preferably install exactly as described in this file. After that, just run the main.py file to open the project on a localhost port, if there are any route errors during execution, try the route number in the 'port' parameter of the run method (<strong>main.py, line 4</strong>).
+<br>
+<br>
+<h1> Thank you all! </h1>
