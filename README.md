@@ -1,11 +1,12 @@
-A webapp how locks albums with pins, to maintain all yours photos safe.
+<h1> A webapp how locks albums with pins, to maintain all yours photos safe. </h1>
 
 <h3>The project uses the following technologies</h3>
-> Python (Flask and Flask modules)
-> MySQL
-> JavaScript Vanilla 
-> Bootstrap 5
+  > Python (Flask and Flask modules) <br>
+  > MySQL <br>
+  > JavaScript Vanilla <br>
+  > Bootstrap 5 <br>
 
+<h3> Project </h3>
 The auth.py file is in charge of creating, validating and saving new or existing users in the database.
 The views.py file takes care of the remaining routes of the project, routes to create and delete albums, upload and delete images, change user information and access the default templates for the same.
 
